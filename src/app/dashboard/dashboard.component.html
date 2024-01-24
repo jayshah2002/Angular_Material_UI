@@ -1,0 +1,10 @@
+<h2>All Users:</h2>
+
+<button (click)="get()">Get User
+</button>
+
+    <div *ngFor="let user of details" style="padding: 5px;">
+       <li> {{user.name}}, {{user.email}}
+        <button class="btn btn-danger" (click)="deleteUser(user.email)">Delete</button>
+       </li> 
+    </div>

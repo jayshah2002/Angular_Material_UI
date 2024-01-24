@@ -1,0 +1,32 @@
+
+    <div class="wrapper">
+        <h2>Registration</h2>
+        <form [formGroup]="registerForm" #reg="ngForm" (ngSubmit)="postUser(reg.value)">
+            <div class="alert alert-danger" role="alert"  *ngIf="nameValidator && nameValidator.touched && nameValidator.invalid">Name is required</div>
+            <div class="alert alert-danger" role="alert"  *ngIf="emailValidator && emailValidator.touched && emailValidator.invalid">Valid Email is required</div>
+            <div class="alert alert-danger" role="alert"  *ngIf="passValidator && passValidator.touched && passValidator.invalid">Valid PassWord is required</div>
+            
+            <div class="input-box">
+                <input type="text" placeholder="Enter your name" formControlName="name" required>
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="Enter your email" formControlName="email"required>
+            </div>
+            <div class="input-box"> 
+                <input type="password" placeholder="Create password" formControlName="pass" required>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Confirm password" formControlName="conpass" required>
+            </div>
+        <div class="policy">
+            <input type="checkbox">
+            <h3>I accept all terms & condition</h3>
+        </div>
+        <div class="input-box button">
+            <input type="Submit" value="Register Now">
+        </div>
+        <div class="text">
+            <h3>Already have an account? <a routerLink="/login">Login now</a></h3>
+        </div>
+    </form>
+</div>

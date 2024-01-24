@@ -1,0 +1,26 @@
+<form #reg="ngForm" [formGroup]="loginForm" (ngSubmit)="login(reg.value)"> 
+    <label for="first"> 
+          Username: 
+      </label> 
+    <input type="text" 
+           id="first"
+           
+           formControlName="email"
+           placeholder="Enter your Email" required> 
+
+    <label for="password"> 
+          Password: 
+      </label> 
+    <input type="password"
+           id="password" 
+           
+           formControlName="password" 
+           placeholder="Enter your Password" required> 
+
+    <div class="wrap"> 
+        <button 
+                > 
+            Submit 
+        </button> 
+    </div> 
+</form> 
