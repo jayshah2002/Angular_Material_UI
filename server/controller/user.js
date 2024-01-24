@@ -46,9 +46,12 @@ exports.userDisplay = async function (req, res) {
 exports.deluser=async function (req, res) {
 
   const email=req.params.email;
+  const deleteUser=await registermodel.findOneAndDelete(email);
+  if (!deleteUser) {
+    return res.status(404).json({ message: "Product not found" });
+  }
 
-  console.log(email);
-  res.status(200).json(email)
+  res.status(200).send({ message: "Product Deleted Succesfully" });
 }
 
 exports.auth = async function (req, res) {

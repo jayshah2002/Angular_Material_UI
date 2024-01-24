@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class DashboardComponent {
     details:any=[];
+    data:any[]=[];
     constructor(private userService: UserService) {}
     
   
@@ -26,7 +27,8 @@ export class DashboardComponent {
     deleteUser(email:string){
       console.log(email);
       
-      this.userService.deleteUsers(email).subscribe(res=>console.log(res));
+      this.userService.deleteUsers(email).subscribe(
+        (res)=>{this.data = this.data.filter(item => item.email !== email);console.log(res);});
     }
       
     
